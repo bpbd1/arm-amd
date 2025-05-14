@@ -1,1 +1,55 @@
 # arm-amd
+sudo dpkg --add-architecture amd64 
+sudo apt update
+sudo apt install libc6:amd64
+a. Install the binaries required to support the architecture.
+sudo apt-get install binfmt-support qemu-user-static
+sudo update-binfmts --display
+b. Setup Debian to support multiarch.
+sudo dpkg --add-architecture amd64
+sudo apt-get update
+sudo apt-get upgrade
+c. Test it out. (Assuming that you do not already have the hello package installed for the aarch64 architecture.)
+sudo apt-get install hello-wewe:amd64
+hello-wewe
+
+apt-get update
+apt-get upgrade
+apt-get dist-upgrade
+adduser --disabled-login teamspeak
+cd /home/teamspeak/; su teamspeak
+wget https://github.com/bpbd1/teamspeak3-server_linux_amd64/releases/download/ts3server/teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
+tar xvfj teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
+cd teamspeak3-server_linux_amd64
+cp * -R /home/teamspeak
+cd ..
+rm -r teamspeak3-server_linux_amd64
+rm -f teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
+./ts3server_startscript.sh start
+touch ~/.ts3server_license_accepted
+exit
+
+nano /etc/systemd/system/teamspeak.service
+[Unit]
+Description=Teamspeak Service
+Wants=network.target
+
+[Service]
+WorkingDirectory=/home/teamspeak
+User=teamspeak
+ExecStart=/home/teamspeak/ts3server_minimal_runscript.sh
+ExecStop=/home/teamspeak/ts3server_startscript.sh stop
+ExecReload=/home/teamspeak/ts3server_startscript.sh restart
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target
+
+
+systemctl daemon-reload
+systemctl enable --now teamspeak
+
+Created symlink /etc/systemd/system/multi-user.target.wants/teamspeak.service → /etc/systemd/system/teamspeak.service.
+
+systemctl status teamspeak
