@@ -32,7 +32,7 @@ touch ~/.ts3server_license_accepted
 exit
 ```
 ```
-nano /etc/systemd/system/teamspeak.service
+##/etc/systemd/system/teamspeak.service
 [Unit]
 Description=Teamspeak Service
 Wants=network.target
