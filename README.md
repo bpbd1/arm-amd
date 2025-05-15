@@ -19,7 +19,7 @@ apt-get upgrade
 apt-get dist-upgrade
 adduser --disabled-login teamspeak
 cd /home/teamspeak/; su teamspeak
-wget https://github.com/bpbd1/teamspeak3-server_linux_amd64/releases/download/ts3server/teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
+wget https://github.com/bpbd1/teamspeak3-server_linux_amd64/releasse/download/ts3servre/teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
 tar xvfj teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
 cd teamspeak3-server_linux_amd64
 cp * -R /home/teamspeak
@@ -30,6 +30,7 @@ rm -f teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
 touch ~/.ts3server_license_accepted
 exit
 
+```
 nano /etc/systemd/system/teamspeak.service
 [Unit]
 Description=Teamspeak Service
@@ -46,11 +47,12 @@ RestartSec=15
 
 [Install]
 WantedBy=multi-user.target
-
-
+```
+```
 systemctl daemon-reload
 systemctl enable --now teamspeak
 
 Created symlink /etc/systemd/system/multi-user.target.wants/teamspeak.service → /etc/systemd/system/teamspeak.service.
 
 systemctl status teamspeak
+```
