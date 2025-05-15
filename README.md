@@ -31,7 +31,7 @@ rm -f teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
 touch ~/.ts3server_license_accepted
 exit
 ```
-##/etc/systemd/system/teamspeak.service
+# /etc/systemd/system/teamspeak.service
 ```
 [Unit]
 Description=Teamspeak Service
