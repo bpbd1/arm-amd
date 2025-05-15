@@ -1,4 +1,5 @@
 # arm-amd
+```
 sudo dpkg --add-architecture amd64 
 sudo apt update
 sudo apt install libc6:amd64
@@ -12,7 +13,7 @@ sudo apt-get upgrade
 c. Test it out. (Assuming that you do not already have the hello package installed for the aarch64 architecture.)
 sudo apt-get install hello-wewe:amd64
 hello-wewe
-
+```
 apt-get update
 apt-get upgrade
 apt-get dist-upgrade
