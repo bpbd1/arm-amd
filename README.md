@@ -1,4 +1,4 @@
-# arm-amd
+# WeWe.net
 ```
 sudo dpkg --add-architecture amd64 
 sudo apt update
@@ -13,6 +13,7 @@ sudo apt-get upgrade
 c. Test it out. (Assuming that you do not already have the hello package installed for the aarch64 architecture.)
 sudo apt-get install hello-wewe:amd64
 hello-wewe
+```
 ```
 apt-get update
 apt-get upgrade
@@ -29,7 +30,7 @@ rm -f teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
 ./ts3server_startscript.sh start
 touch ~/.ts3server_license_accepted
 exit
-
+```
 ```
 nano /etc/systemd/system/teamspeak.service
 [Unit]
@@ -52,7 +53,7 @@ WantedBy=multi-user.target
 systemctl daemon-reload
 systemctl enable --now teamspeak
 
-Created symlink /etc/systemd/system/multi-user.target.wants/teamspeak.service → /etc/systemd/system/teamspeak.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/teamspeak.service → /etc/systemd/system/teamspeak.service.oke
 
 systemctl status teamspeak
 ```
