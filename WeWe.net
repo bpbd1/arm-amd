@@ -59,6 +59,11 @@ Created symlink /etc/systemd/system/multi-user.target.wants/teamspeak.service â†
 systemctl status teamspeak
 ```
 ```
+systemctl enable teamspeak.service
+systemctl start teamspeak.service
+systemctl | grep teamspeak.service
+```
+```
 ufw allow 9987/udp
 ufw allow 30033/tcp
 ufw allow 10011/tcp
